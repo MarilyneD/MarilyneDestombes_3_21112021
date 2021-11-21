@@ -1,2 +1,2 @@
-# projetohmyfood
-projet 3 openclassrooms
+# projet3
+ohmyfood openclassrooms

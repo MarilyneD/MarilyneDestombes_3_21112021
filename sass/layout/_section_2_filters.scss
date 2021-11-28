@@ -1,0 +1,72 @@
+.filters {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 45px;
+  align-items: center;
+  font-weight: bolder;
+
+  h2 {
+    font-size: 25px;
+    width: 85%;
+  } /*même largeur que les filters__title*/
+  p {
+    width: 85%;
+  }
+}
+
+.filter__title {
+  display: flex;
+  box-shadow: 0 0 10px grey; /*bordure shadow gris plus foncé*/
+  height: 55px;
+  border-radius: 15px;
+  width: 85%;
+  align-items: center; /*aligné sur axe horizontal*/
+  padding-left: 0px;
+  padding-right: 20px;
+  margin-bottom: 10px; /*utile au moment du wrapping pour ne pas se coller sur phone */
+  font-size: 13px;
+  font-weight: bold;
+  background-color: $clear-grey;
+  transition: all 600ms;
+
+  &__number {
+    display: flex;
+    position: relative;
+    right: 15px;
+    width: 30px;
+    height: 25px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    color: white;
+    font-size: 14px;
+    background-color: $primary;
+  }
+
+  i {
+    display: flex;
+    color: $silver-grey;
+    font-size: 20px;
+    object-fit: fill; /*au lieu de choisir font-size*/
+    left: -10px;
+    height: 70px;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /*texte pas collé au cercle à gauche du texte*/
+  }
+
+  &:hover {
+    background-color: $pale-pink; /*à changer en pale primary avec function dans variables*/
+    box-shadow: 0 0 10px $primary;
+    transform: scale(1.02);
+  }
+
+  &:hover i {
+    color: $primary;
+  }
+}

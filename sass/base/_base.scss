@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+} /* pour appliquer à tout le code css le box sizing*/
+
+a:link {
+  text-decoration: none;
+  color: black;
+} /*les liens ne sont pas bleu soulignés, valable pour tous les liens de la page */
+
+a:visited {
+  color: black;
+} /* sinon les liens cliqués deviennent violets une fois cliqués */
+
+body {
+  font-family: "Raleway", sans-serif; /*  ACHANGER ACHANGER ACHANGER ACHANGER ACHANGER ACHANGER */
+  font-size: 16px;
+}
+
+main {
+  margin-left: 0;
+  margin-right: 0;
+  
+}
+
+@media screen and (min-width: 900px){body {
+    margin-left: 30%;
+    margin-right: 30%;
+    border: 3px solid $clear-grey;
+    
+  }}

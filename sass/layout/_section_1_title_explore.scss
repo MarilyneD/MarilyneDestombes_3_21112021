@@ -1,0 +1,65 @@
+
+.localization {
+  font-weight: bold;
+  width: 100%;
+  background-color: $middle-grey;
+  text-align: center;
+  i {
+    padding-right: 20px;
+  }
+
+  p {
+    padding-left: 25px;
+  }
+}
+
+
+
+.first-section {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 340px;
+  align-items: center;
+  background-color: $clear-grey;
+
+  h1 {
+    padding-top: 30px;
+    display: flex;
+    width: 70%;
+    font-size: 25px;
+    justify-content: center;
+    text-align: center;
+  }
+  .discover {
+    display: flex;
+    width: 85%; /*comme la largeur des filters-title */
+    margin-top: 5px;
+    margin-bottom: 25px;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  button {
+    display: flex;
+    border-style: none;
+    color: white;
+    box-shadow: 0 0 10px grey;
+    background: linear-gradient($secondary, $primary);
+    border-radius: 30px;
+    height: 50px;
+    width: 270px;
+    font-size: 15px;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    transition: all 600ms; 
+     
+    
+    &:hover {
+      transform: scale(1.1); /*le bouton grossit de 10% au survol de la souris*/
+      background: linear-gradient(lighten($secondary,10%), lighten($primary,10%));
+    }
+  }
+
+}

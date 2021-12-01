@@ -1,0 +1,54 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 35px;
+  padding-bottom: 55px;
+  padding-left: 60px;
+  background: $silver-grey;
+
+  i {
+    padding-right: 10px; /* pour séparer les icônes */
+  }
+
+  h2 {
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: white;
+  }
+
+  p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: white;
+  }
+
+  a {
+    display: flex;
+  
+    &:link {
+      color: white;
+    } /* pour ne pas avoir un lien bleu souligné*/
+  
+    &:hover {
+      text-decoration: underline;
+      color: white;
+    } /* quand on passe dessus*/
+  }
+
+}
+
+
+
+#logo-bottom {
+  display: flex;
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-family: Shrikhand;
+  color: white;
+}
+
+
+

@@ -1,3 +1,339 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
 
+/* pour appliquer à tout le code css le box sizing*/
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+/*les liens ne sont pas bleu soulignés, valable pour tous les liens de la page */
+a:visited {
+  color: black;
+}
+
+/* sinon les liens cliqués deviennent violets une fois cliqués */
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+main {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*
+@media screen and (min-width: 800px){body {
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 3px solid $clear-grey;
+
+  }}*/
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.logo {
+  padding-top: 20px;
+  padding-left: 0;
+  height: 70px;
+}
+.logo img {
+  width: 200px;
+  height: 33px;
+}
+
+.localization {
+  font-weight: bold;
+  color: #44464a;
+  width: 100%;
+  background-color: #e0e0e0;
+  text-align: center;
+}
+.localization i {
+  padding-right: 20px;
+}
+.localization p {
+  padding-left: 25px;
+}
+
+.first-section {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 340px;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+.first-section h1 {
+  padding-top: 30px;
+  display: flex;
+  width: 70%;
+  font-size: 25px;
+  justify-content: center;
+  text-align: center;
+}
+.first-section .discover {
+  display: flex;
+  width: 85%;
+  /*comme la largeur des filters-title */
+  margin-top: 5px;
+  margin-bottom: 25px;
+  justify-content: space-around;
+  text-align: center;
+}
+.first-section button {
+  display: flex;
+  border-style: none;
+  color: white;
+  box-shadow: 0 0 10px grey;
+  background: linear-gradient(#ff79da, #9356dc);
+  border-radius: 30px;
+  height: 50px;
+  width: 210px;
+  font-size: 15px;
+  align-items: center;
+  justify-content: space-around;
+  /*font-weight: bold;*/
+  transition: all 400ms;
+}
+.first-section button:hover {
+  /*au survol de la souris*/
+  transform: scale(1.1);
+  /*le bouton grossit de 10% */
+  background: linear-gradient(#ff93e1, #a16be0);
+  /*pour éclaircir la couleur de fond du bouton*/
+  box-shadow: 0 0 10px #343434;
+  /*ombre portée sous le bouton + visible*/
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 45px;
+  align-items: center;
+  font-weight: bolder;
+  /*même largeur que les filters__title*/
+}
+.filters h2 {
+  font-size: 25px;
+  width: 85%;
+}
+.filters p {
+  width: 85%;
+}
+
+.filter__title {
+  display: flex;
+  box-shadow: 0 0 10px grey;
+  /*bordure shadow gris plus foncé*/
+  height: 55px;
+  border-radius: 15px;
+  width: 85%;
+  align-items: center;
+  /*aligné sur axe horizontal*/
+  padding-left: 0px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  /*utile au moment du wrapping pour ne pas se coller sur phone */
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #f2f2f2;
+  transition: all 600ms;
+}
+.filter__title__number {
+  display: flex;
+  position: relative;
+  right: 15px;
+  width: 30px;
+  height: 25px;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  color: white;
+  font-size: 14px;
+  background-color: #9356dc;
+}
+.filter__title i {
+  display: flex;
+  color: #44464a;
+  font-size: 20px;
+  object-fit: fill;
+  /*au lieu de choisir font-size*/
+  left: -10px;
+  height: 70px;
+  width: 70px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  /*texte pas collé au cercle à gauche du texte*/
+}
+.filter__title:hover {
+  background-color: #e8d5e3;
+  /*à changer en pale primary avec function dans variables*/
+  box-shadow: 0 0 10px #9356dc;
+  transform: scale(1.02);
+}
+.filter__title:hover i {
+  color: #9356dc;
+}
+@media screen and (min-width: 800px) {
+  .filter__title {
+    width: 30%;
+  }
+}
+
+.restaurants {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  /*entre les 2 lignes */
+  background-color: #f2f2f2;
+  font-size: 16px;
+  padding-bottom: 70px;
+}
+.restaurants h2 {
+  display: flex;
+  width: 100%;
+  padding-top: 30px;
+  padding-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  height: 100%;
+  /*la carte occupe toute la largeur du conteneur a=href */
+  min-height: 200px;
+  width: 85%;
+  box-shadow: 0 0 10px gray;
+  /*bordure shadow gris plus foncé*/
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 12px;
+}
+.card img {
+  display: flex;
+  width: 100%;
+  max-height: 210px;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+}
+.card__new {
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  top: 15px;
+  padding: 8px 14px;
+  margin: 0;
+  color: #278870;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #99e2d0;
+  border-radius: 2px;
+}
+@media screen and (min-width: 800px) {
+  .card {
+    width: 45%;
+  }
+}
+
+.card__text {
+  display: flex;
+  height: 75px;
+  padding-left: 15px;
+  padding-right: 25px;
+  justify-content: space-between;
+  align-items: center;
+  /*Le coeur est centré selon axe secondaire, justify-content: axe primaire*/
+}
+.card__text h3 {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+.card__text p {
+  margin-top: 3px;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+.card__text .far {
+  display: flex;
+  font-size: 30px;
+  color: #44464a;
+}
+.card__text .far:hover + .fas {
+  transition: 1s;
+  color: #a875e6;
+}
+.card__text .fas {
+  display: flex;
+  z-index: 1;
+  font-size: 30px;
+  color: #ff79da;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 35px;
+  padding-bottom: 55px;
+  padding-left: 60px;
+  background: #44464a;
+}
+footer i {
+  padding-right: 10px;
+  /* pour séparer les icônes */
+}
+footer h2 {
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: white;
+}
+footer p {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: white;
+}
+footer a {
+  display: flex;
+  /* pour ne pas avoir un lien bleu souligné*/
+  /* quand on passe dessus*/
+}
+footer a:link {
+  color: white;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+#logo-bottom {
+  display: flex;
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-family: Shrikhand;
+  color: white;
+}
 
 /*# sourceMappingURL=style.css.map */

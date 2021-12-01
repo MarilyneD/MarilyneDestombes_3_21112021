@@ -1,0 +1,67 @@
+
+.localization {
+  font-weight: bold;
+  color: $silver-grey;
+  width: 100%;
+  background-color: $middle-grey;
+  text-align: center;
+  i {
+    padding-right: 20px;
+  }
+
+  p {
+    padding-left: 25px;
+  }
+}
+
+
+
+.first-section {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 340px;
+  align-items: center;
+  background-color: $clear-grey;
+
+  h1 {
+    padding-top: 30px;
+    display: flex;
+    width: 70%;
+    font-size: 25px;
+    justify-content: center;
+    text-align: center;
+  }
+  .discover {
+    display: flex;
+    width: 85%; /*comme la largeur des filters-title */
+    margin-top: 5px;
+    margin-bottom: 25px;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  button {
+    display: flex;
+    border-style: none;
+    color: white;
+    box-shadow: 0 0 10px grey;
+    background: linear-gradient($secondary, $primary);
+    border-radius: 30px;
+    height: 50px;
+    width: 210px;
+    font-size: 15px;
+    align-items: center;
+    justify-content: space-around;
+    /*font-weight: bold;*/
+    transition: all 400ms; 
+     
+    
+    &:hover { /*au survol de la souris*/
+      transform: scale(1.1); /*le bouton grossit de 10% */
+      background: linear-gradient(lighten($secondary,5%), lighten($primary,5%)); /*pour éclaircir la couleur de fond du bouton*/
+      box-shadow: 0 0 10px darken(grey,30%); /*ombre portée sous le bouton + visible*/
+    }
+  }
+
+}

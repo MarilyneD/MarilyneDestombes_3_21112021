@@ -1,0 +1,96 @@
+.restaurants {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+  justify-content: space-evenly;
+  row-gap: 20px; /*entre les 2 lignes */
+  background-color: $clear-grey;
+  font-size: 16px;
+  padding-bottom: 70px;
+
+  h2 {
+    display: flex;
+    width: 100%; 
+    padding-top: 30px;
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+.card {
+  display: flex;
+  position: relative;
+  height: 100%; /*la carte occupe toute la largeur du conteneur a=href */
+  min-height: 200px;
+  width: 85%;
+  box-shadow: 0 0 10px gray; /*bordure shadow gris plus foncé*/
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 12px;
+
+  img {
+    display: flex;
+    width: 100%;
+    max-height: 210px;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+  }
+  &__new {
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+    top: 15px;
+    padding: 8px 14px;
+    margin: 0;
+    color: darken($tertiary, 40%);
+    font-size: 16px;
+    font-weight: bold;
+    background-color: $tertiary;
+    border-radius: 2px;
+  }
+
+  @media screen and (min-width: 800px){width: 45%;}
+
+
+}
+
+.card__text {
+  display: flex;
+  height: 75px;
+  padding-left: 15px;
+  padding-right: 25px;
+  justify-content: space-between;
+  align-items: center; /*Le coeur est centré selon axe secondaire, justify-content: axe primaire*/
+  h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+  p {
+    margin-top: 3px;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+  .far {
+    display: flex;
+    font-size: 30px;
+    color: $silver-grey;
+
+    &:hover + .fas{
+      transition: 1s;
+      color: $pale-purple;
+    }
+  }
+  .fas {
+    display: flex;
+    z-index: 1;
+    font-size: 30px;
+    color: $secondary;
+  
+  }
+}

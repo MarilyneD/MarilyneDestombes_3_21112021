@@ -1,4 +1,30 @@
 @charset "UTF-8";
+/*@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #222222;
+  z-index: 1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+*/
 * {
   box-sizing: border-box;
 }
@@ -108,7 +134,7 @@ header {
   /*le bouton grossit de 10% */
   background: linear-gradient(#ff93e1, #a16be0);
   /*pour éclaircir la couleur de fond du bouton*/
-  box-shadow: 0 0 10px #343434;
+  box-shadow: 0 0 10px #4d4d4d;
   /*ombre portée sous le bouton + visible*/
 }
 
@@ -153,12 +179,11 @@ header {
   display: flex;
   position: relative;
   right: 15px;
-  width: 30px;
+  width: 25px;
   height: 25px;
   border-radius: 100%;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   color: white;
   font-size: 14px;
   background-color: #9356dc;
@@ -238,7 +263,6 @@ header {
 }
 .card__new {
   position: absolute;
-  z-index: 1;
   right: 15px;
   top: 15px;
   padding: 8px 14px;
@@ -274,20 +298,41 @@ header {
   margin-bottom: 4px;
   font-size: 15px;
 }
-.card__text .far {
+
+.heart {
+  display: flex;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.heart .far {
   display: flex;
   font-size: 30px;
+  position: absolute;
+  opacity: 1;
   color: #44464a;
-}
-.card__text .far:hover + .fas {
-  transition: 1s;
-  color: #a875e6;
-}
-.card__text .fas {
   display: flex;
-  z-index: 1;
+  transition: opacity 500ms;
+  background: transparent;
+}
+
+.heart .fas {
+  display: flex;
   font-size: 30px;
-  color: #ff79da;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 500ms;
+  color: #9356dc;
+}
+
+.heart:hover .far {
+  opacity: 0;
+  transition: 1s;
+}
+
+.heart:hover .fas {
+  opacity: 0.8;
+  transition: 1s;
 }
 
 footer {

@@ -11,7 +11,7 @@
 
   h2 {
     display: flex;
-    width: 100%; 
+    width: 100%;
     padding-top: 30px;
     padding-left: 20px;
     margin-top: 0px;
@@ -42,7 +42,6 @@
   }
   &__new {
     position: absolute;
-    z-index: 1;
     right: 15px;
     top: 15px;
     padding: 8px 14px;
@@ -54,9 +53,9 @@
     border-radius: 2px;
   }
 
-  @media screen and (min-width: 800px){width: 45%;}
-
-
+  @media screen and (min-width: 800px) {
+    width: 45%;
+  }
 }
 
 .card__text {
@@ -76,21 +75,39 @@
     margin-bottom: 4px;
     font-size: 15px;
   }
-  .far {
-    display: flex;
-    font-size: 30px;
-    color: $silver-grey;
+}
+.heart{
+  display: flex;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+.heart .far {
+  display: flex;
+  font-size: 30px;
+  position: absolute;
+  opacity: 1;
+  color: $silver-grey;
+  display: flex;
+  transition: opacity 500ms;
+  background: transparent;
+}
+.heart .fas {
+  display: flex;
+  font-size: 30px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 500ms;
+  color:$primary;
 
-    &:hover + .fas{
-      transition: 1s;
-      color: $pale-purple;
-    }
-  }
-  .fas {
-    display: flex;
-    z-index: 1;
-    font-size: 30px;
-    color: $secondary;
+}
+
+.heart:hover .far {
+  opacity: 0;
+  transition: 1s;
+}
+
+.heart:hover .fas {
+  opacity: 0.8;
+  transition: 1s;
   
-  }
 }

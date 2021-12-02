@@ -97,8 +97,10 @@
   position: absolute;
   opacity: 0;
   transition: opacity 500ms;
-  color:$primary;
-
+  background: linear-gradient($secondary,$primary);
+  background-clip: text; /*le background s'affiche à travers le texte (ici l'icône) et pas ailleurs*/
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .heart:hover .far {
@@ -107,7 +109,7 @@
 }
 
 .heart:hover .fas {
-  opacity: 0.8;
+  opacity: 1;
   transition: 1s;
   
 }

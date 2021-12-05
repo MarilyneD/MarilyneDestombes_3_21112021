@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ohmyfood</title>
+    <title>Ohmyfood : Restaurants gastronomiques</title>
+    <meta
+      name="description"
+      content="Composez et commandez votre menu préféré dans les meilleurs restaurants gastronomiques de Paris !"
+    />
+    <meta
+      name="keywords"
+      content="Restaurant, gastronomie, réservation, menu"
+    />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -23,6 +31,11 @@
   </head>
 
   <body>
+    <section class="loader-container">
+      <span class="loader loader-circles"><span class="loader-text">Ohmyfood</span> </span>
+       
+    </section>
+
     <!-- ====  header with logo  ====-->
     <header>
       <div class="logo">
@@ -48,7 +61,7 @@
         </button>
       </section>
 
-      <!-- ============================== section two : filters with 3 choices  =================================================-->
+      <!-- =========================== section two : filters with 3 choices  ==========================================-->
       <section class="second-section">
         <div class="filters">
           <h2>Fonctionnement</h2>
@@ -73,11 +86,11 @@
         </div>
       </section>
 
-      <!-- ======================= section three : restaurants  ============================================================= -->
+      <!-- ======================= section three : restaurants  ================================================= -->
       <section>
         <div class="restaurants">
           <h2>Restaurants</h2>
-
+          <!-- ==  La Palette du Goût - Ménilmontant  == -->
           <a href="html/menilmontant.html" class="card">
             <div class="card__new">Nouveau</div>
             <img
@@ -91,11 +104,13 @@
                 <p>Ménilmontant</p>
               </div>
 
-              <i class="far fa-heart"></i>
-              <i class="fas fa-heart"></i>
+              <div class="heart">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-heart"></i>
+              </div>
             </div>
           </a>
-
+          <!-- ==  La Note enchantée - Charonne  == -->
           <a href="html/charonne.html" class="card">
             <div class="card__new">Nouveau</div>
             <img
@@ -108,10 +123,13 @@
                 <p>Charonne</p>
               </div>
 
-              <i class="far fa-heart"></i>
+              <div class="heart">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-heart"></i>
+              </div>
             </div>
           </a>
-
+          <!-- ==  à la Française - Cité Rouge  == -->
           <a href="html/citerouge.html" class="card">
             <img
               src="assets/restaurants/citerouge.jpg"
@@ -122,11 +140,13 @@
                 <h3>À la française</h3>
                 <p>Cité Rouge</p>
               </div>
-
-              <i class="far fa-heart"></i>
+              <div class="heart">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-heart"></i>
+              </div>
             </div>
           </a>
-
+          <!-- ==  Le délice des sens - Folie-Méricourt  == -->
           <a href="html/foliemericourt.html" class="card">
             <img
               src="assets/restaurants/foliemericourt.jpg"
@@ -138,13 +158,16 @@
                 <p>Folie-Méricourt</p>
               </div>
 
-              <i class="far fa-heart"></i>
+              <div class="heart">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-heart"></i>
+              </div>
             </div>
           </a>
         </div>
       </section>
     </main>
-    <!-- =================================== footer =========================================================== -->
+    <!-- ============================== footer ============================================== -->
     <footer>
       <div class="apropos">
         <span id="logo-bottom">

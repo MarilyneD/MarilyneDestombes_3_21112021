@@ -1,60 +1,70 @@
-/* *,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #FFFFFF;
-}
-
 .loader-container {
-  border-radius: 5px;
-  background: #FFFFFF;
-  width: 400px;
-  height: 400px;
-  margin: 100px auto 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loader {
-  display: block;
-  position: relative;
-  width: 250px;
-  height: 250px;
-  border-radius: 250px;
-  border: 7px solid transparent;
-  border-top-color: $primary;
-  animation: spin 4s linear infinite;
-}
-
-.loader::before, .loader::after {
-  content: "";
   position: absolute;
-  border-radius: 50%;
-  border: 7px solid transparent;
+  display: flex;
+  background-color: white;
+  z-index: 1;
+  margin-left: -30px;
+  margin-right: -30px;
+  height: 100%;
+  width: 110%;
+  animation: opacityanimation 3s;
+  animation-fill-mode: forwards;
 }
 
-.loader::before {
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  border-top-color: $secondary;
-  animation: spin 3s linear infinite;
+.loader {display: flex;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: calc(50% - 135px);
+  align-items: center;
+  justify-content: center;
 }
 
-.loader::after {
-  top: 25px;
-  left: 25px;
-  right: 25px;
-  bottom: 25px;
-  border-top-color: $tertiary;
-  animation: spin 2s linear infinite;
+.loader-text {
+  display: flex;
+  font-family: shrikhand;
+  position: relative;
+  font-size: 40px;
+  
+}
+
+.loader-circles {
+  border-radius: 50%; /*permet de créer un cercle parfait*/
+  border: 3px solid transparent;
+  border-color: $pale-pink;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 0s linear infinite;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: $secondary;
+    opacity: 0.8;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: $tertiary;
+    opacity: 0.5;
+    -webkit-animation: spin 2.5s linear infinite;
+    animation: spin 2.5s linear infinite;
+  }
 }
 
 @keyframes spin {
@@ -62,6 +72,24 @@ body {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);  à 100% de mon animation, rotate à 360deg 
+    transform: rotate(360deg);
   }
-} */
+}
+
+@keyframes opacityanimation {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+  99% {
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}

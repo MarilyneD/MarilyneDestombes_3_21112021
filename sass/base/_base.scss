@@ -12,7 +12,10 @@ a:visited {
 } /* sinon les liens cliqués deviennent violets une fois cliqués */
 
 body {
+  
   position: absolute;
+  left: 0;
+  right: 0;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
@@ -28,8 +31,9 @@ main {
 }
 
 @media screen and (min-width: 800px){body {
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-left:15%;
+    margin-right: 15%;
+    
     border: 3px solid $clear-grey;
     
   }}

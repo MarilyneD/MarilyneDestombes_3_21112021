@@ -1,30 +1,57 @@
-.picture {
-  height: 300px;
+.picturemenilmontant {
+  height: 260px;
   width: 100%;
   background-image: url(../assets/restaurants/menilmontant.jpg);
-  background-size: 100%  ;
+  background-size: 100%;
+  object-fit: cover;
+}
+
+.picturecharonne {
+  height: 260px;
+  width: 100%;
+  background-image: url(../assets/restaurants/charonne.jpg);
+  background-size: 100%;
+  object-fit: cover;
+}
+
+.pictureciterouge {
+  height: 260px;
+  width: 100%;
+  background-image: url(../assets/restaurants/citerouge.jpg);
+  background-size: 100%;
+  object-fit: cover;
+}
+
+.picturefoliemericourt {
+  height: 260px;
+  width: 100%;
+  background-image: url(../assets/restaurants/foliemericourt.jpg);
+  background-size: 100%;
   object-fit: cover;
 }
 
 .title {
-  display: flex;
+  display: grid;
+  font-family: Shrikhand;
+  font-size: 12px;
   padding-left: 30px;
-  flex-direction: row;
-  justify-content: space-between;
-  h1 {
-    font-family: Shrikhand;
-    font-size: 30px;
-  }
+  grid-template-columns: 82% 18%; /*2 columns la largeur de la premiere fait que ohmyfood est centré*/
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "h1  .heart ";
+  width: 100%;
   i {
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    padding-right: 50px;
     color: $silver-grey;
+    padding-top: 13px;
+    align-items: center;
+    justify-content: center;
   }
 }
+
 .section-menus {
   display: flex;
+  height: 100%;
   flex-direction: column;
   row-gap: 10px;
   border-radius: 30px 30px 0 0;
@@ -47,56 +74,61 @@
   }
 }
 
-
-$cardheight:60px;
+$cardheight: 60px;
 
 .foodcard {
-  display: flex;
-  height: $cardheight;
+  display: grid;
   width: 85%;
-  box-shadow: 0 0 10px gray;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: white;
+  height: $cardheight;
+  grid-gap: 0px;
   border-radius: 15px;
   font-size: 12px;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 33% 33% 36%;
+  box-shadow: 0 0 10px gray;
   margin-bottom: 20px;
-  transform: scaleY(0); /* au départ les foodcards sont cachées*/
-  transform-origin: top; /* Au lieu de s'étendre depuis un axe horizontal central, depuis le haut*/
+  transform: scaleY(0);
+  transform-origin: top;
 
   &__text {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
     padding-left: 20px;
-    padding-right: 90px;
-    justify-content: space-between;
-    align-items: center; /* est centré selon axe secondaire, justify-content: axe primaire*/
+    grid-column: 1 / 1;
+    grid-row: 1 / 3;
+    padding-bottom: 10px;
+    
+    h3 {
+      margin-bottom: 5px;
+    }
     p {
-      margin-top: 0;
+      margin-top: 0px;
+      text-overflow: ellipsis;
     }
   }
 
   &__price {
-    display: flex;
-    padding-right: 10px;
-    padding-top: 40px;
+    font-weight: bold;
+    grid-column: 2 / 2;
+    grid-row: 2;
+    padding-left: 30px;
+    padding-top: 17px;
+       
   }
 
   &__check {
     display: flex;
+    grid-column: 2 / 2;
+    grid-row: 1 / 4;
     position: relative;
-    padding-right: 25px;
-    padding-left: 25px;
+    padding-right: 0px;
+    padding-left: 0px;
     border-radius: 0 15px 15px 0;
-    height: cardheight;
     background-color: $tertiary;
     transform: scaleX(0); /*scale0 donc inexistant */
     transform-origin: 100% 0%; /*démarre depuis la droite */
     i {
       align-items: center;
       display: flex;
+      margin-left: 42%;
       font-size: 20px;
       color: white;
     }
@@ -119,7 +151,7 @@ $cardheight:60px;
     transform: scaleY(1);
   }
 }
-$duration: 1s;
+$duration: 600ms;
 
 .entrees .foodcard {
   animation: loading-menus $duration;
@@ -147,12 +179,33 @@ $duration: 1s;
     i {
       display: flex;
       transform: rotate(-360deg);
-      transition: all 5000ms;
+      transition: all 800ms;
     }
   }
   &__price {
     display: flex;
     transform: translate(-70px);
     transition: all 500ms;
+    text-overflow: ellipsis;
+    
   }
+}
+
+.order {
+  display: flex;
+  width: 100%;
+  padding-top: 40px;
+  justify-content: center;
+  height: 170px;
+}
+
+@media screen and (min-width: 1500px) {
+  .section-menus {
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .entrees,.plats,.desserts {width: 33%}
+  }
+
+  
 }

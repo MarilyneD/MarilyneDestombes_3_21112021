@@ -1,6 +1,8 @@
 footer {
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: -25px;              /* comme la section principale était décalée de 25px, il restait un espace blanc avant le footer que j'ai aussi décalé ! */
   padding-top: 35px;
   padding-bottom: 55px;
   padding-left: 60px;
@@ -27,20 +29,17 @@ footer {
 
   a {
     display: flex;
-  
+
     &:link {
       color: white;
     } /* pour ne pas avoir un lien bleu souligné*/
-  
+
     &:hover {
       text-decoration: underline;
       color: white;
     } /* quand on passe dessus*/
   }
-
 }
-
-
 
 #logo-bottom {
   display: flex;
@@ -49,6 +48,3 @@ footer {
   font-family: Shrikhand;
   color: white;
 }
-
-
-

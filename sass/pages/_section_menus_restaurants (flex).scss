@@ -83,14 +83,17 @@ $cardheight: 60px;
   background-color: #fff;
   border-radius: 15px;
   font-size: 12px;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   box-shadow: 0 0 10px #ccc;
   margin-bottom: 20px;
-  justify-content: space-between;
   transform: scaleY(0);
   transform-origin: top;
 
   &__text {
-    display: flex;
+    display: inline;
     flex-direction: column;
     padding-left: 20px;
     padding-bottom: 0px;
@@ -100,8 +103,8 @@ $cardheight: 60px;
     h3 {
       display: inline;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
       margin-bottom: 5px;
     }
     p {
@@ -109,29 +112,31 @@ $cardheight: 60px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-
+    
       margin-top: 0px;
     }
   }
 
   &__price {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
     font-weight: bold;
-    margin-left: auto; /*permet de rejeter prix vars la droite */
-    padding-left: 10px;
-    padding-top: 34px;
-    padding-right: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0px;
+    padding-top: 30px;
   }
 
   &__check {
     display: flex;
-    width: 0;
+    padding-right: 30px;
+    padding-left: 20px;
     border-radius: 0 15px 15px 0;
     background-color: $tertiary;
-    visibility: hidden;
-    /* transform: scaleX(0); scale0 donc inexistant
-    transform-origin: 100% 0%; démarre depuis la droite */
+    transform: scaleX(0); /*scale0 donc inexistant */
+    transform-origin: 100% 0%; /*démarre depuis la droite */
     i {
       align-items: center;
       display: flex;
@@ -180,9 +185,7 @@ $duration: 600ms;
 .section-menus a:hover .foodcard {
   &__check {
     display: flex;
-    visibility: visible;
-    width: 70px;
-    /*  transform: scaleX(1);*/
+    transform: scaleX(1);
     transition: all 500ms;
 
     i {
@@ -191,11 +194,11 @@ $duration: 600ms;
       transition: all 800ms;
     }
   }
-  /*&__price {
+  &__price {
     display: inline;
     transform: translate(-70px);
     transition: all 500ms;
-  }*/
+  }
 }
 
 .order {

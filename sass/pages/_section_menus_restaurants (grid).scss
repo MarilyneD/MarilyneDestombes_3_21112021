@@ -77,61 +77,65 @@
 $cardheight: 60px;
 
 .foodcard {
-  display: flex;
+  display: grid;
   width: 85%;
   height: $cardheight;
   background-color: #fff;
+  grid-gap: 0px;
   border-radius: 15px;
   font-size: 12px;
+  white-space : nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 33% 33% 36%;
   box-shadow: 0 0 10px #ccc;
   margin-bottom: 20px;
-  justify-content: space-between;
   transform: scaleY(0);
   transform-origin: top;
 
   &__text {
-    display: flex;
-    flex-direction: column;
     padding-left: 20px;
-    padding-bottom: 0px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    grid-column: 1 / 1;
+    grid-row: 1 / 3;
+    padding-bottom: 10px;
+  
+      text-overflow: ellipsis;
+    
     h3 {
-      display: inline;
-      white-space: nowrap;
+      margin-bottom: 5px;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-bottom: 5px;
     }
     p {
-      display: inline;
+      margin-top: 0px;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap;
-
-      margin-top: 0px;
+      
     }
   }
 
   &__price {
-    display: flex;
-    flex-wrap: wrap;
     font-weight: bold;
-    margin-left: auto; /*permet de rejeter prix vars la droite */
-    padding-left: 10px;
-    padding-top: 34px;
-    padding-right: 15px;
+    grid-column: 2 / 2;
+    grid-row: 2;
+    padding-left: 30px;
+    padding-top: 17px;
+
+       
   }
 
   &__check {
     display: flex;
-    width: 0;
+    grid-column: 2 / 2;
+    grid-row: 1 / 4;
+    position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
     border-radius: 0 15px 15px 0;
     background-color: $tertiary;
-    visibility: hidden;
-    /* transform: scaleX(0); scale0 donc inexistant
-    transform-origin: 100% 0%; démarre depuis la droite */
+    transform: scaleX(0); /*scale0 donc inexistant */
+    transform-origin: 100% 0%; /*démarre depuis la droite */
     i {
       align-items: center;
       display: flex;
@@ -180,9 +184,7 @@ $duration: 600ms;
 .section-menus a:hover .foodcard {
   &__check {
     display: flex;
-    visibility: visible;
-    width: 70px;
-    /*  transform: scaleX(1);*/
+    transform: scaleX(1);
     transition: all 500ms;
 
     i {
@@ -191,11 +193,12 @@ $duration: 600ms;
       transition: all 800ms;
     }
   }
-  /*&__price {
-    display: inline;
+  &__price {
+    display: flex;
     transform: translate(-70px);
     transition: all 500ms;
-  }*/
+      
+  }
 }
 
 .order {
@@ -211,10 +214,8 @@ $duration: 600ms;
     flex-wrap: wrap;
     flex-direction: row;
 
-    .entrees,
-    .plats,
-    .desserts {
-      width: 33%;
-    }
+    .entrees,.plats,.desserts {width: 33%}
   }
+
+  
 }

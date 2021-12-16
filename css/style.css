@@ -202,6 +202,8 @@ button:hover {
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas: "fas  logo__text ";
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .localization {
@@ -417,8 +419,8 @@ footer {
   position: relative;
   top: -25px;
   /* comme la section principale était décalée de 25px, il restait un espace blanc avant le footer que j'ai aussi décalé ! */
-  padding-top: 35px;
-  padding-bottom: 55px;
+  padding-top: 30px;
+  padding-bottom: 40px;
   padding-left: 60px;
   background: #44464a;
 }

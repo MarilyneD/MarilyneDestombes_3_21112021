@@ -197,6 +197,7 @@ button:hover {
   /*pour éclaircir la couleur de fond du bouton*/
   box-shadow: 0 0 10px #4d4d4d;
   /*ombre portée sous le bouton + visible*/
+  cursor: pointer;
 }
 
 .logo {

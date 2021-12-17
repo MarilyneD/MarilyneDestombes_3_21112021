@@ -1,0 +1,25 @@
+button {
+  display: flex;
+  border-style: none;
+  color: white;
+  box-shadow: 0 0 10px grey;
+  background: linear-gradient($secondary, $primary);
+  border-radius: 30px;
+  height: 50px;
+  width: 210px;
+  font-size: 15px;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: bold;
+  transition: all 400ms;
+  &:hover {
+    /*au survol de la souris*/
+    transform: scale(1.1); /*le bouton grossit de 10% */
+    background: linear-gradient(
+      lighten($secondary, 5%),
+      lighten($primary, 5%)
+    ); /*pour éclaircir la couleur de fond du bouton*/
+    box-shadow: 0 0 10px darken(grey, 20%); /*ombre portée sous le bouton + visible*/
+    cursor: pointer;
+  }
+}

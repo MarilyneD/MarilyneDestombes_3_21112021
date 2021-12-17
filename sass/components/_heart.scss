@@ -1,0 +1,39 @@
+.heart {
+  display: flex;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+.heart .far {
+  display: flex;
+  font-size: 30px;
+  position: absolute;
+  opacity: 1;
+  color: $silver-grey;
+  display: flex;
+  transition: opacity 500ms;
+  background: transparent;
+}
+.heart .fas {
+  display: flex;
+  font-size: 30px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 500ms;
+  background: linear-gradient(
+    $secondary,
+    $primary
+  ); /*pour obtenir un dégradé de couleurs dans le coeur*/
+  background-clip: text; /*le background s'affiche à travers le texte (ici l'icône coeur) et pas ailleurs*/
+  -webkit-background-clip: text; /*pour que cela fonctionne sur les navigateurs tels que chrome et safari*/
+  color: transparent;
+}
+
+.heart:hover .far {
+  opacity: 0;
+  transition: 1s;
+}
+
+.heart:hover .fas {
+  opacity: 1;
+  transition: 1s;
+}

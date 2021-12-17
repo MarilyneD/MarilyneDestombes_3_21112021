@@ -1,9 +1,11 @@
 @import "./abstracts/variables";
 @import "./base/base";
 @import "./components/loader";
+@import "./components/heart";
+@import "./components/button";
 @import "./layout/header";
 @import "./layout/section_1_title_explore";
 @import "./layout/section_2_filters";
 @import "./layout/section_3_restaurants";
 @import "./layout/footer";
-
+@import "./pages/section_menus_restaurants";

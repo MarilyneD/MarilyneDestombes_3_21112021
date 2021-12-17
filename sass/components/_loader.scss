@@ -3,20 +3,19 @@
   display: flex;
   background-color: white;
   z-index: 1;
-  margin-left: -30px;
-  margin-right: -30px;
   height: 100%;
-  width: 110%;
+  width: 100%;
   animation: opacityanimation 3s;
   animation-fill-mode: forwards;
 }
 
-.loader {display: flex;
+.loader {
+  display: flex;
   position: relative;
   width: 300px;
   height: 300px;
   top: 10%;
-  left: calc(50% - 135px);
+  left: calc(50% - 150px);
   align-items: center;
   justify-content: center;
 }
@@ -26,7 +25,6 @@
   font-family: shrikhand;
   position: relative;
   font-size: 40px;
-  
 }
 
 .loader-circles {

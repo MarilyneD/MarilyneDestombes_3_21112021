@@ -1,16 +1,12 @@
-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .logo {
-  padding-top: 20px;
-  padding-left: 0;
-  height: 70px;
-
-  img {
-    width: 200px;
-    height: 33px;
-  }
+  display: grid;
+  font-family: Shrikhand;
+  font-size: 35px;
+  grid-template-columns: calc(50% - 2.7 * 35px) 70%; /*2 columns la largeur de la premiere fait que ohmyfood est centré*/
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "fas  logo__text ";
+  padding-top: 15px;
+  padding-bottom: 10px;
 }

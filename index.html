@@ -4,14 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ohmyfood : Restaurants gastronomiques</title>
+    <meta name="title" content="Oh My Food : restaurants gastronomiques" />
+    <title>Ohmyfood</title>
     <meta
       name="description"
       content="Composez et commandez votre menu préféré dans les meilleurs restaurants gastronomiques de Paris !"
-    />
-    <meta
-      name="keywords"
-      content="Restaurant, gastronomie, réservation, menu"
     />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="css/normalize.css" />
@@ -31,18 +28,18 @@
   </head>
 
   <body>
-    <section class="loader-container">
+    <div class="loader-container">
       <span class="loader loader-circles"><span class="loader-text">Ohmyfood</span> </span>
        
-    </section>
+    </div>
 
     <!-- ====  header with logo  ====-->
     <header>
       <div class="logo">
-        <img src="assets/logo/ohmyfood.png" alt="Logo Ohmyfood" />
+        <i class="fas"></i>
+        <div class="logo__text">ohmyfood</div>
       </div>
     </header>
-
     <main>
       <!-- ========================  section one : localization & title & explore button  ===============================-->
       <section class="first-section">
@@ -61,28 +58,28 @@
         </button>
       </section>
 
-      <!-- =========================== section two : filters with 3 choices  ==========================================-->
+      <!-- =========================== section two : three-stage operation  ==========================================-->
       <section class="second-section">
         <div class="filters">
           <h2>Fonctionnement</h2>
 
-          <a class="filter__title" href="#">
+          <div class="filter__title" href="#">
             <div class="filter__title__number">1</div>
             <i class="fas fa-mobile-alt"></i>
             <p>Choisissez un restaurant</p>
-          </a>
+          </div>
 
-          <a class="filter__title" href="#">
+          <div class="filter__title" href="#">
             <div class="filter__title__number">2</div>
             <i class="fas fa-list"></i>
             <p>Composez votre menu</p>
-          </a>
+          </div>
 
-          <a class="filter__title" href="#">
+          <div class="filter__title" href="#">
             <div class="filter__title__number">3</div>
             <i class="fas fa-store"></i>
             <p>Dégustez au restaurant</p>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -177,10 +174,10 @@
         <a href="#"
           ><h2><i class="fas fa-utensils"></i>Proposer un restaurant</h2></a
         >
-        <a href=""
+        <a href="#"
           ><h2><i class="fas fa-hands-helping"></i>Devenir partenaire</h2></a
         >
-        <a href=""><p>Mentions légales</p></a>
+        <a href="#"><p>Mentions légales</p></a>
         <a href="mailto:contact@ohmyfood.com"><p>Contact</p></a>
       </div>
     </footer>

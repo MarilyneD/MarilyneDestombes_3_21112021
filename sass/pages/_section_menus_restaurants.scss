@@ -33,8 +33,11 @@
 .title {
   display: grid;
   font-family: Shrikhand;
+  background-color: $clear-grey;
   font-size: 12px;
+  border-radius: 30px 30px 0 0;
   padding-left: 30px;
+  margin-top: -30px; /*pour remonter sur l'image*/
   grid-template-columns: 82% 18%; /*2 columns la largeur de la premiere fait que ohmyfood est centré*/
   grid-template-rows: 1fr;
   gap: 0px 0px;
@@ -49,20 +52,16 @@
   }
 }
 
-.section-menus {
+@mixin commonthreesections {
   display: flex;
   height: 100%;
   flex-direction: column;
   row-gap: 10px;
-  border-radius: 30px 30px 0 0;
-  position: relative;
-  top: -25px;
   background-color: $clear-grey;
   h2 {
     display: flex;
     margin-left: 30px;
     width: 20%;
-
     &:before {
       content: "";
       display: flex;
@@ -72,6 +71,16 @@
       border-bottom: $tertiary solid 3px;
     } /*  pour créer un trait vert plus court car sinon dépasse et est à 20%  https://qastack.fr/programming/8572952/border-length-smaller-than-div-width*/
   }
+}
+
+.entrees {
+  @include commonthreesections;
+}
+.plats {
+  @include commonthreesections;
+}
+.desserts {
+  @include commonthreesections;
 }
 
 $cardheight: 60px;
@@ -130,8 +139,6 @@ $cardheight: 60px;
     border-radius: 0 15px 15px 0;
     background-color: $tertiary;
     visibility: hidden;
-    /* transform: scaleX(0); scale0 donc inexistant
-    transform-origin: 100% 0%; démarre depuis la droite */
     i {
       align-items: center;
       display: flex;
@@ -142,12 +149,22 @@ $cardheight: 60px;
   }
 }
 
-.entrees__foodcards,
-.plats__foodcards,
-.desserts__foodcards {
+@mixin flexcolumn {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.entrees__foodcards {
+  @include flexcolumn;
+}
+
+.plats__foodcards {
+  @include flexcolumn;
+}
+
+.desserts__foodcards {
+  @include flexcolumn;
 }
 
 @keyframes loading-menus {
@@ -177,25 +194,30 @@ $duration: 600ms;
   animation-fill-mode: forwards;
 }
 
-.section-menus a:hover .foodcard {
-  &__check {
-    display: flex;
-    visibility: visible;
-    width: 70px;
-    /*  transform: scaleX(1);*/
-    transition: all 500ms;
-
-    i {
+@mixin animationcheck {
+  a:hover .foodcard {
+    &__check {
       display: flex;
-      transform: rotate(-360deg);
-      transition: all 800ms;
+      visibility: visible;
+      width: 70px;
+      transition: all 500ms;
+      i {
+        display: flex;
+        transform: rotate(-360deg);
+        transition: all 800ms;
+      }
     }
   }
-  /*&__price {
-    display: inline;
-    transform: translate(-70px);
-    transition: all 500ms;
-  }*/
+}
+
+.entrees {
+  @include animationcheck;
+}
+.plats {
+  @include animationcheck;
+}
+.desserts {
+  @include animationcheck;
 }
 
 .order {
@@ -204,17 +226,28 @@ $duration: 600ms;
   padding-top: 40px;
   justify-content: center;
   height: 170px;
+  background-color: $clear-grey;
 }
 
-@media screen and (min-width: 1500px) {
-  .section-menus {
+@media screen and (min-width: 1200px) {
+  .foodcard {
+    width: 30%;
+  }
+  .entrees__foodcards {
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-around;
+  }
 
-    .entrees,
-    .plats,
-    .desserts {
-      width: 33%;
-    }
+  .plats__foodcards {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .desserts__foodcards {
+    
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }

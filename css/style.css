@@ -35,6 +35,13 @@ main {
     border: 3px solid #f2f2f2;
   }
 }
+@media screen and (min-width: 1200px) {
+  body {
+    margin-left: 0%;
+    margin-right: 0%;
+    border: none;
+  }
+}
 .loader-container {
   position: absolute;
   display: flex;
@@ -179,7 +186,7 @@ button {
   font-size: 15px;
   align-items: center;
   justify-content: space-around;
-  /*font-weight: bold;*/
+  font-weight: bold;
   transition: all 400ms;
 }
 button:hover {
@@ -416,9 +423,6 @@ button:hover {
 footer {
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: -25px;
-  /* comme la section principale était décalée de 25px, il restait un espace blanc avant le footer que j'ai aussi décalé ! */
   padding-top: 30px;
   padding-bottom: 40px;
   padding-left: 60px;
@@ -444,13 +448,8 @@ footer p {
 footer a {
   display: flex;
   /* pour ne pas avoir un lien bleu souligné*/
-  /* quand on passe dessus*/
 }
 footer a:link {
-  color: white;
-}
-footer a:hover {
-  text-decoration: underline;
   color: white;
 }
 
@@ -462,6 +461,22 @@ footer a:hover {
   color: white;
 }
 
+@media screen and (min-width: 1200px) {
+  footer {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 0;
+  }
+
+  .apropos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
 .picturemenilmontant {
   height: 260px;
   width: 100%;
@@ -497,8 +512,12 @@ footer a:hover {
 .title {
   display: grid;
   font-family: Shrikhand;
+  background-color: #f2f2f2;
   font-size: 12px;
+  border-radius: 30px 30px 0 0;
   padding-left: 30px;
+  margin-top: -30px;
+  /*pour remonter sur l'image*/
   grid-template-columns: 82% 18%;
   /*2 columns la largeur de la premiere fait que ohmyfood est centré*/
   grid-template-rows: 1fr;
@@ -514,23 +533,64 @@ footer a:hover {
   justify-content: center;
 }
 
-.section-menus {
+.entrees {
   display: flex;
   height: 100%;
   flex-direction: column;
   row-gap: 10px;
-  border-radius: 30px 30px 0 0;
-  position: relative;
-  top: -25px;
   background-color: #f2f2f2;
 }
-.section-menus h2 {
+.entrees h2 {
   display: flex;
   margin-left: 30px;
   width: 20%;
   /*  pour créer un trait vert plus court car sinon dépasse et est à 20%  https://qastack.fr/programming/8572952/border-length-smaller-than-div-width*/
 }
-.section-menus h2:before {
+.entrees h2:before {
+  content: "";
+  display: flex;
+  width: 70px;
+  height: 30px;
+  position: absolute;
+  border-bottom: #99e2d0 solid 3px;
+}
+
+.plats {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  row-gap: 10px;
+  background-color: #f2f2f2;
+}
+.plats h2 {
+  display: flex;
+  margin-left: 30px;
+  width: 20%;
+  /*  pour créer un trait vert plus court car sinon dépasse et est à 20%  https://qastack.fr/programming/8572952/border-length-smaller-than-div-width*/
+}
+.plats h2:before {
+  content: "";
+  display: flex;
+  width: 70px;
+  height: 30px;
+  position: absolute;
+  border-bottom: #99e2d0 solid 3px;
+}
+
+.desserts {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  row-gap: 10px;
+  background-color: #f2f2f2;
+}
+.desserts h2 {
+  display: flex;
+  margin-left: 30px;
+  width: 20%;
+  /*  pour créer un trait vert plus court car sinon dépasse et est à 20%  https://qastack.fr/programming/8572952/border-length-smaller-than-div-width*/
+}
+.desserts h2:before {
   content: "";
   display: flex;
   width: 70px;
@@ -591,8 +651,6 @@ footer a:hover {
   border-radius: 0 15px 15px 0;
   background-color: #99e2d0;
   visibility: hidden;
-  /* transform: scaleX(0); scale0 donc inexistant
-  transform-origin: 100% 0%; démarre depuis la droite */
 }
 .foodcard__check i {
   align-items: center;
@@ -602,8 +660,18 @@ footer a:hover {
   color: white;
 }
 
-.entrees__foodcards,
-.plats__foodcards,
+.entrees__foodcards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plats__foodcards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .desserts__foodcards {
   display: flex;
   flex-direction: column;
@@ -636,21 +704,37 @@ footer a:hover {
   animation-fill-mode: forwards;
 }
 
-.section-menus a:hover .foodcard {
-  /*&__price {
-    display: inline;
-    transform: translate(-70px);
-    transition: all 500ms;
-  }*/
-}
-.section-menus a:hover .foodcard__check {
+.entrees a:hover .foodcard__check {
   display: flex;
   visibility: visible;
   width: 70px;
-  /*  transform: scaleX(1);*/
   transition: all 500ms;
 }
-.section-menus a:hover .foodcard__check i {
+.entrees a:hover .foodcard__check i {
+  display: flex;
+  transform: rotate(-360deg);
+  transition: all 800ms;
+}
+
+.plats a:hover .foodcard__check {
+  display: flex;
+  visibility: visible;
+  width: 70px;
+  transition: all 500ms;
+}
+.plats a:hover .foodcard__check i {
+  display: flex;
+  transform: rotate(-360deg);
+  transition: all 800ms;
+}
+
+.desserts a:hover .foodcard__check {
+  display: flex;
+  visibility: visible;
+  width: 70px;
+  transition: all 500ms;
+}
+.desserts a:hover .foodcard__check i {
   display: flex;
   transform: rotate(-360deg);
   transition: all 800ms;
@@ -662,17 +746,30 @@ footer a:hover {
   padding-top: 40px;
   justify-content: center;
   height: 170px;
+  background-color: #f2f2f2;
 }
 
-@media screen and (min-width: 1500px) {
-  .section-menus {
+@media screen and (min-width: 1200px) {
+  .foodcard {
+    width: 30%;
+  }
+
+  .entrees__foodcards {
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-around;
   }
-  .section-menus .entrees,
-.section-menus .plats,
-.section-menus .desserts {
-    width: 33%;
+
+  .plats__foodcards {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .desserts__foodcards {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 

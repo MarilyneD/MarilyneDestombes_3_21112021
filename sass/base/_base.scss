@@ -33,3 +33,11 @@ main {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  body {
+    margin-left: 0%;
+    margin-right: 0%;
+
+    border: none;
+  }
+}

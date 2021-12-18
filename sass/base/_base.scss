@@ -24,6 +24,15 @@ main {
   margin-right: 0;
 }
 
+@media screen and (min-width: 480px) {
+  body {
+    margin-left: 6%;
+    margin-right: 6%;
+
+    border: 3px solid $clear-grey;
+  }
+}
+
 @media screen and (min-width: 800px) {
   body {
     margin-left: 12%;
@@ -33,11 +42,11 @@ main {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   body {
-    margin-left: 0%;
-    margin-right: 0%;
+    margin-left: 18%;
+    margin-right: 18%;
 
-    border: none;
+    border: 3px solid $clear-grey;
   }
 }

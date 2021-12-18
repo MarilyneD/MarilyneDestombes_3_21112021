@@ -15,6 +15,11 @@ a:visited {
 }
 
 /* sinon les liens cliqués deviennent violets une fois cliqués */
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   position: absolute;
   left: 0;
@@ -65,8 +70,9 @@ main {
   position: relative;
   width: 300px;
   height: 300px;
-  top: 10%;
+  top: 6%;
   left: calc(50% - 150px);
+  /*pour centrer en tenant compte de la moitié de la taille du loader*/
   align-items: center;
   justify-content: center;
 }
@@ -137,6 +143,22 @@ main {
   100% {
     opacity: 0;
     z-index: -1;
+  }
+}
+@media screen and (max-width: 350px) {
+  .loader {
+    width: 180px;
+    height: 180px;
+    left: calc(50% - 90px);
+  }
+
+  .loader-text {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .loader {
+    top: 10%;
   }
 }
 .heart {

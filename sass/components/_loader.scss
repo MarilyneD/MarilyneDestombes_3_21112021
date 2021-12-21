@@ -6,7 +6,7 @@
   height: 100%;
   width: 100%;
   animation: opacityanimation 3s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; /* permet à la page de garder les propriétes CSS de la fin de l'animation*/
 }
 
 .loader {
@@ -16,8 +16,8 @@
   height: 300px;
   top: 6%;
   left: calc(
-    50% - 150px
-  ); /*pour centrer en tenant compte de la moitié de la taille du loader*/
+    50% - 150px 
+  ); /*calcul pour centrer en tenant compte de la moitié de la taille du loader*/
   align-items: center;
   justify-content: center;
 }
@@ -98,7 +98,7 @@
   .loader {
     width: 180px;
     height: 180px;
-    left: calc(50% - 90px);
+    left: calc(50% - 90px);  /*sur les petits écrans, inférieurs à 350px, le loader doit être + petit*/
   }
   .loader-text {
     font-size: 20px;
@@ -107,6 +107,6 @@
 
 @media screen and (min-width: 1200px) {
   .loader {
-    top: 10%;
+    top: 10%; /*pour que le loader soit + bas sur grand écran*/
   }
 }

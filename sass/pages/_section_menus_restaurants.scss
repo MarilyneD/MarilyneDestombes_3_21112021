@@ -179,7 +179,7 @@ $duration: 600ms;
 
 .entrees .foodcard {
   animation: loading-menus $duration;
-  animation-fill-mode: forwards; /*garde les propriétés css de fin de l'animation  */
+  animation-fill-mode: forwards; /*garde les propriétés css de fin de l'animation pr que la carte reste ouverte à scale 1  */
 }
 
 .plats .foodcard {

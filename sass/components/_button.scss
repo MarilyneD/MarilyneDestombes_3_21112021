@@ -2,7 +2,7 @@ button {
   display: flex;
   border-style: none;
   color: white;
-  box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 10px grey; /* 0 0 = aucun décalage, donc ombre tout autour */
   background: linear-gradient($secondary, $primary);
   border-radius: 30px;
   height: 50px;
@@ -14,12 +14,11 @@ button {
   transition: all 400ms;
   &:hover {
     /*au survol de la souris*/
-    transform: scale(1.1); /*le bouton grossit de 10% */
-    background: linear-gradient(
+      background: linear-gradient(
       lighten($secondary, 5%),
       lighten($primary, 5%)
     ); /*pour éclaircir la couleur de fond du bouton*/
     box-shadow: 0 0 10px darken(grey, 20%); /*ombre portée sous le bouton + visible*/
-    cursor: pointer;
+    cursor: pointer; /*pour faire un doigt qui survole le bouton*/
   }
 }

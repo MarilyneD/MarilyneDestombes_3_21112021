@@ -63,6 +63,7 @@ main {
   width: 100%;
   animation: opacityanimation 3s;
   animation-fill-mode: forwards;
+  /* permet à la page de garder les propriétes CSS de la fin de l'animation*/
 }
 
 .loader {
@@ -72,7 +73,7 @@ main {
   height: 300px;
   top: 6%;
   left: calc(50% - 150px);
-  /*pour centrer en tenant compte de la moitié de la taille du loader*/
+  /*calcul pour centrer en tenant compte de la moitié de la taille du loader*/
   align-items: center;
   justify-content: center;
 }
@@ -150,6 +151,7 @@ main {
     width: 180px;
     height: 180px;
     left: calc(50% - 90px);
+    /*sur les petits écrans, inférieurs à 350px, le loader doit être + petit*/
   }
 
   .loader-text {
@@ -159,6 +161,7 @@ main {
 @media screen and (min-width: 1200px) {
   .loader {
     top: 10%;
+    /*pour que le loader soit + bas sur grand écran*/
   }
 }
 .heart {
@@ -185,7 +188,7 @@ main {
   opacity: 0;
   transition: opacity 500ms;
   background: linear-gradient(#ff79da, #9356dc);
-  /*pour obtenir un dégradé de couleurs dans le coeur*/
+  /*pour obtenir un dégradé de couleurs dans le coeur. Le dégradé ne fonctionne pas avec color*/
   background-clip: text;
   /*le background s'affiche à travers le texte (ici l'icône coeur) et pas ailleurs*/
   -webkit-background-clip: text;
@@ -208,6 +211,7 @@ button {
   border-style: none;
   color: white;
   box-shadow: 0 0 10px grey;
+  /* 0 0 = aucun décalage, donc ombre tout autour */
   background: linear-gradient(#ff79da, #9356dc);
   border-radius: 30px;
   height: 50px;
@@ -220,13 +224,12 @@ button {
 }
 button:hover {
   /*au survol de la souris*/
-  transform: scale(1.1);
-  /*le bouton grossit de 10% */
   background: linear-gradient(#ff93e1, #a16be0);
   /*pour éclaircir la couleur de fond du bouton*/
   box-shadow: 0 0 10px #4d4d4d;
   /*ombre portée sous le bouton + visible*/
   cursor: pointer;
+  /*pour faire un doigt qui survole le bouton*/
 }
 
 .logo {
@@ -719,7 +722,7 @@ footer a:link {
 .entrees .foodcard {
   animation: loading-menus 600ms;
   animation-fill-mode: forwards;
-  /*garde les propriétés css de fin de l'animation  */
+  /*garde les propriétés css de fin de l'animation pr que la carte reste ouverte à scale 1  */
 }
 
 .plats .foodcard {

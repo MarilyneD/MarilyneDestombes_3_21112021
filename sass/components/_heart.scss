@@ -22,7 +22,7 @@
   background: linear-gradient(
     $secondary,
     $primary
-  ); /*pour obtenir un dégradé de couleurs dans le coeur*/
+  ); /*pour obtenir un dégradé de couleurs dans le coeur. Le dégradé ne fonctionne pas avec color*/
   background-clip: text; /*le background s'affiche à travers le texte (ici l'icône coeur) et pas ailleurs*/
   -webkit-background-clip: text; /*pour que cela fonctionne sur les navigateurs tels que chrome et safari*/
   color: transparent;
